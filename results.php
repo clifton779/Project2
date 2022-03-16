@@ -1,5 +1,4 @@
 <?php
-    session_start();
     $userFile = $_SESSION['username'] . ".txt";
     $file = file($userfile);
     $answers = array($_GET('question1'),$_GET('question2'),$_GET('question3'),
