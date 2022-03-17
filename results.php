@@ -48,6 +48,11 @@ if($result === ('var1')) {
 }
 $insert = $_SESSION['username'] . ',' . $result;
 file_put_contents($userfile, $insert, FILE_APPEND);
+$leaderboard = file('leaderboard.txt');
+$newLeaderboard = array($leaderboard[1], $leaderboard[2], $leaderboard[3], $leaderboard[4], $insert);
+$newLeaderboard = implode('\n', $newLeaderboard);
+file_put_contents('leaderboard.txt', $newLeaderboard);
+
 ?>
 
 <html>
