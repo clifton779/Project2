@@ -18,10 +18,8 @@
       exit();
     } else {
       /*Unsuccessful attempt: Set error message */
-      $fool = ($logins[$Username] == $Password);
       $msg="<span style='color:red'>Invalid Login Details</span>";
       echo $msg.'<br>';
-      echo $logins[$Username];
       }
     }
   if(isset($_POST['signup'])) {
