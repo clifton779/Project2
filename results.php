@@ -1,8 +1,14 @@
 <?php
-$userFile = $_SESSION['username'] . ".txt";
-$file = file($userfile);
+$file = file('results.txt');
+
 $answers = array($_GET('question1'),$_GET('question2'),$_GET('question3'),
     $_GET('question4'),$_GET('question5'),$_GET('question6') )
+
+if (!array_key_exists($_SESSION['username'], $file)) {
+    $file[$_SESSION['username']] = array();
+    
+} 
+$userarray = $file[$_SESSION['username']];
 
 $arrlength = count($answers);
 $var1 = 0;
@@ -47,10 +53,13 @@ if($result === ('var1')) {
     $pictureURL = 'url6';
 }
 $insert = $_SESSION['username'] . ',' . $result;
-file_put_contents($userfile, $insert, FILE_APPEND);
+$userarray[] = $result;
+$file[$_SESSION['username']] = $userarray;
+$file = implode("\n", $file);
+file_put_contents('results.txt', $file);
 $leaderboard = file('leaderboard.txt');
 $newLeaderboard = array($leaderboard[1], $leaderboard[2], $leaderboard[3], $leaderboard[4], $insert);
-$newLeaderboard = implode('\n', $newLeaderboard);
+$newLeaderboard = implode("\n", $newLeaderboard);
 file_put_contents('leaderboard.txt', $newLeaderboard);
 
 ?>
