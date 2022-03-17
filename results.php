@@ -1,5 +1,5 @@
 <?php
-$file = file('results.txt');
+$file = json_decode(file_get_contents('results.json'));
 
 $answers = array($_GET('question1'),$_GET('question2'),$_GET('question3'),
     $_GET('question4'),$_GET('question5'),$_GET('question6') )
@@ -55,8 +55,7 @@ if($result === ('var1')) {
 $insert = $_SESSION['username'] . ',' . $result;
 $userarray[] = $result;
 $file[$_SESSION['username']] = $userarray;
-$file = implode("\n", $file);
-file_put_contents('results.txt', $file);
+file_put_contents('results.json', json_encode($file));
 $leaderboard = file('leaderboard.txt');
 $newLeaderboard = array($leaderboard[1], $leaderboard[2], $leaderboard[3], $leaderboard[4], $insert);
 $newLeaderboard = implode("\n", $newLeaderboard);
