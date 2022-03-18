@@ -1,7 +1,116 @@
-* {
-
+body {
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-body {
+header {
+  text-transform: uppercase;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
 
+img#logo {
+  margin: 20px auto;
+  display: block;
+}
+
+#navbar {
+  width: 100%;
+  overflow: hidden;
+  background-color: dodgerblue;
+}
+
+#navbar a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: 'Arial', 'Helvetica', 'sans-serif';
+}
+
+#navbar a#logout{
+  float: right;
+}
+
+#navbar a:hover {
+  background-color: blue;
+}
+
+form#sign-up, form#login {
+  box-sizing: border-box;
+  max-width: 500px;
+  margin:auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 70vh;
+}
+
+form#quiz {
+  border: 5px solid lightgray;
+  max-width: 350px;
+  margin: 70px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 70vh;
+  padding: 10px 30vh;
+}
+
+input[id*="answers"] {
+  margin: 0 0 10px 0;
+}
+
+div.question {
+  margin: 0 0 40px 0;
+}
+
+.input-container {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.input-field {
+  width: 100%;
+  padding: 10px;
+  outline: none;
+}
+
+.input-field:focus {
+  border: 2px solid dodgerblue;
+}
+
+.btn {
+    background-color: dodgerblue;
+    color: white;
+    padding: 15px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+  }
+  
+  .btn:hover {
+    opacity: 1;
+}
+
+button#quiz-btn {
+  margin: 10px 0 0 0;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#logout-message {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 70vh;
 }
