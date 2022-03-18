@@ -41,22 +41,24 @@ img#logo {
 }
 
 form#sign-up, form#login {
-    box-sizing: border-box;
-    max-width: 500px;
-    margin:auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    min-height: 70vh;
+  box-sizing: border-box;
+  max-width: 500px;
+  margin:auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 70vh;
 }
 
 form#quiz {
+  border: 5px solid lightgray;
   max-width: 350px;
   margin: 70px auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   min-height: 70vh;
+  padding: 10px 30vh;
 }
 
 input[id*="answers"] {
@@ -96,6 +98,12 @@ div.question {
   
   .btn:hover {
     opacity: 1;
+}
+
+button#quiz-btn {
+  margin: 10px 0 0 0;
+  font-size: 20px;
+  font-weight: bold;
 }
 
 #logout-message {
