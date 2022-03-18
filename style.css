@@ -2,6 +2,7 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+<<<<<<< HEAD
 header {
   text-transform: uppercase;
   text-align: center;
@@ -69,6 +70,14 @@ div.question {
   margin: 0 0 40px 0;
 }
 
+=======
+form#sign-up, form#login {
+    box-sizing: border-box;
+    max-width:500px;
+    margin:auto;
+}
+
+>>>>>>> a45bae4c6745f7686f2507a05234aafe99382524
 .input-container {
   display: -ms-flexbox; /* IE10 */
   display: flex;
@@ -99,6 +108,7 @@ div.question {
   .btn:hover {
     opacity: 1;
 }
+<<<<<<< HEAD
 
 button#quiz-btn {
   margin: 10px 0 0 0;
@@ -113,4 +123,9 @@ button#quiz-btn {
   align-items: center;
   text-align: center;
   min-height: 70vh;
+=======
+
+p {
+    text-align: center;
+>>>>>>> a45bae4c6745f7686f2507a05234aafe99382524
 }

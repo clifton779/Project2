@@ -1,14 +1,14 @@
 <?php
 $file = json_decode(file_get_contents('results.json'));
-
+$username = $_SESSION['username'];
 $answers = array($_GET('question1'),$_GET('question2'),$_GET('question3'),
     $_GET('question4'),$_GET('question5'),$_GET('question6') )
 
 if (!array_key_exists($_SESSION['username'], $file)) {
-    $file[$_SESSION['username']] = array();
+    $file[$username] = array();
     
 } 
-$userarray = $file[$_SESSION['username']];
+$userarray = $file[$username];
 
 $arrlength = count($answers);
 $var1 = 0;
@@ -52,9 +52,9 @@ if($result === ('var1')) {
 }elseif($result === ('var6')) {
     $pictureURL = 'url6';
 }
-$insert = $_SESSION['username'] . ',' . $result;
+$insert = $username . ',' . $result;
 $userarray[] = $result;
-$file[$_SESSION['username']] = $userarray;
+$file[$username] = $userarray;
 file_put_contents('results.json', json_encode($file));
 $leaderboard = file('leaderboard.txt');
 $newLeaderboard = array($leaderboard[1], $leaderboard[2], $leaderboard[3], $leaderboard[4], $insert);
