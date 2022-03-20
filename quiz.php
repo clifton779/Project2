@@ -20,7 +20,7 @@
             navBar();
         ?>
         
-        <form id="quiz" action="" method="post" >
+        <form id="quiz" action="results.php" method="post" >
             <h1 id="quiz-name">Quiz Name</h1>
             <div class="question">
                 <h3>Question 1</h3>

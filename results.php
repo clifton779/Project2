@@ -1,55 +1,61 @@
 <?php
-$file = json_decode(file_get_contents('results.json'));
-$username = $_SESSION['username'];
-$answers = array($_GET('question1'),$_GET('question2'),$_GET('question3'),
-    $_GET('question4'),$_GET('question5'),$_GET('question6') )
-
-if (!array_key_exists($_SESSION['username'], $file)) {
+include('./common.php');
+session_start(); /* Starts the session */
+$logins = load_creds();
+global $logins;
+if(!isset($_SESSION['UserData']['Username'])){
+    die(header("location: ./login.php"));
+}
+$file = json_decode(file_get_contents('results.json'), true);
+$username = $_SESSION['UserData']['Username'];
+if (!array_key_exists($username, $file)) {
     $file[$username] = array();
-    
 } 
+$answers = array($_POST["q1-answers"],$_POST["q2-answers"],$_POST["q3-answers"],$_POST["q4-answers"],$_POST["q5-answers"],$_POST["q6-answers"]);
+
+
 $userarray = $file[$username];
 
 $arrlength = count($answers);
-$var1 = 0;
-$var2 = 0;
-$var3 = 0;
-$var4 = 0;
-$var5 = 0;
-$var6 = 0;
+$A = 0;
+$B = 0;
+$C = 0;
+$D = 0;
+$E = 0;
+$F = 0;
 
 for($x = 0; $x < $arrlength; $x++) {
-    if($answers[$x] === ('var1')) {
-        $var1++;
-    } elseif($answers[$x] === ('var2')) {
-        $var2++;
-    }elseif($answers[$x] === ('var3')) {
-        $var3++;
-    }elseif($answers[$x] === ('var4')) {
-        $var4++;
-    }elseif($answers[$x] === ('var5')) {
-        $var5++;
-    }elseif($answers[$x] === ('var6')) {
-        $var6++;
+    if($answers[$x] === ("A")) {
+        $A++;
+    } elseif($answers[$x] === ("B")) {
+        $B++;
+    }elseif($answers[$x] === ("C")) {
+        $C++;
+    }elseif($answers[$x] === ("D")) {
+        $D++;
+    }elseif($answers[$x] === ("E")) {
+        $E++;
+    }elseif($answers[$x] === ("F")) {
+        $F++;
     }
 }
 
-$arr = compact('var1', 'var2', 'var3', 'var4', 'var5', 'var6');
+$arr = compact("A", "B", "C", "D", "E", "F");
 arsort($arr);
 $result = key($arr);
 
 $pictureURL = '';
-if($result === ('var1')) {
+if($result === ("A")) {
     $pictureURL = 'url1';
-} elseif($result === ('var2')) {
+} elseif($result === ("B")) {
     $pictureURL = 'url2';
-}elseif($result === ('var3')) {
+}elseif($result === ("C")) {
     $pictureURL = 'url3';
-}elseif($result === ('var4')) {
+}elseif($result === ("D")) {
     $pictureURL = 'url4';
-}elseif($result === ('var5')) {
+}elseif($result === ("E")) {
     $pictureURL = 'url5';
-}elseif($result === ('var6')) {
+}elseif($result === ("F")) {
     $pictureURL = 'url6';
 }
 $insert = $username . ',' . $result;
@@ -57,8 +63,12 @@ $userarray[] = $result;
 $file[$username] = $userarray;
 file_put_contents('results.json', json_encode($file));
 $leaderboard = file('leaderboard.txt');
-$newLeaderboard = array($leaderboard[1], $leaderboard[2], $leaderboard[3], $leaderboard[4], $insert);
-$newLeaderboard = implode("\n", $newLeaderboard);
+print_r($leaderboard);
+$newLeaderboard = array_slice($leaderboard, 1);
+print_r($leaderboard);
+$insert = $insert . "\n";
+$newLeaderboard[] = $insert;
+print_r($newLeaderboard);
 file_put_contents('leaderboard.txt', $newLeaderboard);
 
 ?>
