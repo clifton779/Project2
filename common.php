@@ -23,8 +23,6 @@
         $file = fopen('./cred.txt','a');
         $content = $username.','.$password."\n";
         fwrite($file,$content);
-
-        
         fclose($file);
     }
 
@@ -42,11 +40,19 @@
     }
 
     function load_questions() {
+        if(file_exists('./q1_questions.txt')!= TRUE) {
+            $arr = [];
+            return $arr;
+        }
         $arr = explode("\n", file_get_contents('./q1_questions.txt'));
         return $arr;
     }
 
     function load_answers() {
+        if(file_exists('./q1_answers.txt')!= TRUE) {
+            $arr = [];
+            return $arr;
+        }
         $arr = explode("\n", file_get_contents('./q1_answers.txt'));
         return $arr;
     }
