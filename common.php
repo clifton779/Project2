@@ -23,6 +23,8 @@
         $file = fopen('./cred.txt','a');
         $content = $username.','.$password."\n";
         fwrite($file,$content);
+
+        
         fclose($file);
     }
 
@@ -36,6 +38,16 @@
             list($key, $value) = explode(',', $line);
             $arr[trim($key,'\' ')] = trim(trim($value), '\',');
         }
+        return $arr;
+    }
+
+    function load_questions() {
+        $arr = explode("\n", file_get_contents('./q1_questions.txt'));
+        return $arr;
+    }
+
+    function load_answers() {
+        $arr = explode("\n", file_get_contents('./q1_answers.txt'));
         return $arr;
     }
 
