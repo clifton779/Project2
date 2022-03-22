@@ -6,6 +6,7 @@
     if(!isset($_SESSION['UserData']['Username'])){
         die(header("location: ./login.php"));
     }
+    $questions = load_questions();
 ?>
 
 <html>
@@ -23,7 +24,10 @@
         <form id="quiz" action="" method="post" >
             <h1 id="quiz-name">Quiz Name</h1>
             <div class="question">
-                <h3>Question 1</h3>
+                <h3>Question 1:
+                    <br><br>
+                    <?php echo $questions[0]; ?>
+                </h3>
                 <hr class="question">
                 <div class="answer">
                     <input type="radio" name="q1-answers" id="q1-answers-a" value="A">
@@ -52,7 +56,10 @@
                 <hr class="question">
             </div>
             <div class="question">
-                <h3>Question 2</h3>
+                <h3>Question 2:
+                    <br><br>
+                    <?php echo $questions[1]; ?>
+                </h3>
                 <hr class="question">
                 <div class="answer">
                     <input type="radio" name="q2-answers" id="q2-answers-a" value="A">
@@ -81,7 +88,10 @@
                 <hr class="question">
             </div>
             <div class="question">
-                <h3>Question 3</h3>
+                <h3>Question 3:
+                    <br><br>
+                    <?php echo $questions[2]; ?>
+                </h3>
                 <hr class="question">
                 <div class="answer">
                     <input type="radio" name="q3-answers" id="q3-answers-a" value="A">
@@ -110,7 +120,10 @@
                 <hr class="question">
             </div>
             <div class="question">
-                <h3>Question 4</h3>
+                <h3>Question 4:
+                    <br><br>
+                    <?php echo $questions[3]; ?>
+                </h3>
                 <hr class="question">
                 <div class="answer">
                     <input type="radio" name="q4-answers" id="q4-answers-a" value="A">
@@ -139,7 +152,10 @@
                 <hr class="question">
             </div>
             <div class="question">
-                <h3>Question 5</h3>
+                <h3>Question 5:
+                    <br><br>
+                    <?php echo $questions[4]; ?>
+                </h3>
                 <hr class="question">
                 <div class="answer">
                     <input type="radio" name="q5-answers" id="q5-answers-a" value="A">
@@ -168,7 +184,10 @@
                 <hr class="question">
             </div>
             <div class="question">
-                <h3>Question 6</h3>
+                <h3>Question 6:
+                    <br><br>
+                    <?php echo $questions[5]; ?>
+                </h3>
                 <hr class="question">
                 <div class="answer">
                     <input type="radio" name="q6-answers" id="q6-answers-a" value="A">
@@ -197,7 +216,10 @@
                 <hr class="question">
             </div>
             <div class="question">
-                <h3>Question 7</h3>
+                <h3>Question 7:
+                    <br><br>
+                    <?php echo $questions[6]; ?>
+                </h3>
                 <hr class="question">
                 <div class="answer">
                     <input type="radio" name="q7-answers" id="q7-answers-a" value="A">
@@ -226,7 +248,10 @@
                 <hr class="question">
             </div>
             <div class="question">
-                <h3>Question 8</h3>
+                <h3>Question 8:
+                    <br><br>
+                    <?php echo $questions[7]; ?>
+                </h3>
                 <hr class="question">
                 <div class="answer">
                     <input type="radio" name="q8-answers" id="q8-answers-a" value="A">
@@ -255,7 +280,10 @@
                 <hr class="question">
             </div>
             <div class="question">
-                <h3>Question 9</h3>
+                <h3>Question 9
+                    <br><br>
+                    <?php echo $questions[8]; ?>
+                </h3>
                 <hr class="question">
                 <div class="answer">
                     <input type="radio" name="q9-answers" id="q9-answers-a" value="A">
@@ -284,7 +312,10 @@
                 <hr class="question">
             </div>
             <div class="question">
-                <h3>Question 10</h3>
+                <h3>Question 10
+                    <br><br>
+                    <?php echo $questions[9]; ?>
+                </h3>
                 <hr class="question">
                 <div class="answer">
                     <input type="radio" name="q10-answers" id="q10-answers-a" value="A">
@@ -313,7 +344,10 @@
                 <hr class="question">
             </div>
             <div class="question">
-                <h3>Question 11</h3>
+                <h3>Question 11:
+                    <br><br>
+                    <?php echo $questions[10]; ?>
+                </h3>
                 <hr class="question">
                 <div class="answer">
                     <input type="radio" name="q-answers" id="q11-answers-a" value="A">
@@ -342,7 +376,10 @@
                 <hr class="question">
             </div>
             <div class="question">
-                <h3>Question 12</h3>
+                <h3>Question 12:
+                    <br><br>
+                    <?php echo $questions[11]; ?>
+                </h3>
                 <hr class="question">
                 <div class="answer">
                     <input type="radio" name="q12-answers" id="q12-answers-a" value="A">
