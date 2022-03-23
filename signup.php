@@ -31,7 +31,10 @@
         <link rel="stylesheet" href="./style.css">
     </head>
     <body class="sign-up">
-      <?php navBar(); ?>
+      <?php 
+        logo();
+        navBar();
+      ?>
       <form id="sign-up" method="post" action="">
           <h2>Sign Up Form</h2>
           <div class="input-container">
