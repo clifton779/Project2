@@ -62,7 +62,7 @@ form#quiz {
 }
 
 input[id*="answers"] {
-  margin: 0 0 10px 0;
+  margin: 5px 10px 10px 0;
 }
 
 div.question {
@@ -113,4 +113,26 @@ button#quiz-btn {
   align-items: center;
   text-align: center;
   min-height: 70vh;
+}
+
+div#results-container {
+  display: flex;
+  flex-direction: column;
+  width: 800px;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 70vh;
+}
+
+div#results-inner-container {
+  display: flex;
+  flex-direction: row;
+  text-align: left;
+}
+
+div#results-container img#result {
+  height: 300px;
+  width: 300px;
 }
