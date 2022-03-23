@@ -62,23 +62,11 @@ form#quiz {
 }
 
 input[id*="answers"] {
-  margin: 0 0 10px 0;
+  margin: 5px 10px 10px 0;
 }
 
 div.question {
   margin: 0 0 40px 0;
-}
-
-form#sign-up, form#login {
-    box-sizing: border-box;
-    max-width:500px;
-    margin:auto;
-}
-
-form#sign-up, form#login {
-    box-sizing: border-box;
-    max-width:500px;
-    margin:auto;
 }
 
 .input-container {
@@ -127,6 +115,55 @@ button#quiz-btn {
   min-height: 70vh;
 }
 
-p {
+div#results-container {
+  display: flex;
+  flex-direction: column;
+  width: 800px;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
   text-align: center;
+  min-height: 80vh;
+}
+
+div#results-inner-container {
+  display: flex;
+  flex-direction: row;
+  text-align: left;
+}
+
+div#results-container img#result {
+  height: 350px;
+  width: 350px;
+}
+
+div#description {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+
+div#description h2 {
+  margin: 20px 0 10px 0;
+}
+
+div#description p {
+  line-height: 2.25;
+}
+
+div#buttons {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin: 20px 0 0 0;
+}
+
+button#left-btn {
+  margin: 0 60px 0 20px;
+  font-size: 25px;
+}
+
+button#right-btn {
+  margin: 0 20px 0 60px;
+  font-size: 25px;
 }

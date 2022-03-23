@@ -13,7 +13,7 @@
     /* Check Username and Password existence in defined array */
     if (isset($logins[$Username]) && $logins[$Username] == $Password){
       /* Success: Set session variables and redirect to Protected page  */
-      $_SESSION['UserData']['Username']=$logins[$Username];
+      $_SESSION['UserData']['Username']= $logins[$Username];
       header("location: ./home.php");
       exit();
     } else {
@@ -34,7 +34,10 @@
         <link rel="stylesheet" href="./style.css">
     </head>
     <body class="login">
-      <?php navBar(); ?>
+      <?php 
+        logo(); 
+        navBar(); 
+      ?>
       <div id="login-container">
         <form id="login" method="post" action="">
             <h2>Login Form</h2>
