@@ -8,6 +8,10 @@
     }
     $questions = load_questions();
     $answers = load_answers();
+    $i = 0;
+    global $i;
+    $j = 0;
+    global $j;
 ?>
 
 <html>
@@ -22,40 +26,40 @@
             navBar();
         ?>
         
-        <form id="quiz" action="" method="post" >
-            <h1 id="quiz-name">Quiz Name</h1>
+        <form id="quiz" action="./display_result.php" method="post" >
+            <h1 id="quiz-name"><?php echo $questions[$i++]; ?></h1>
             <div class="question">
                 <h3>Question 1:
                     <br><br>
                     <?php
                         if(count($questions)>0)
-                        {echo $questions[0];}
+                        {echo $questions[$i++];}
                     ?>
                 </h3>
                 <hr class="question">
                 <div class="answer">
                     <input type="radio" name="q1-answers" id="q1-answers-a" value="A">
-                    <label for="q1-answers-a" class="labela">a.<?php if(count($answers)>0) {echo $answers[0];}?> </label>
+                    <label for="q1-answers-a" class="labela"><?php if(count($answers)>0) {echo $answers[$j++];}?> </label>
                 </div>
                 <div class="answer">
                     <input type="radio" name="q1-answers" id="q1-answers-b" value="B">
-                    <label for="q1-answers-b" class="labelb">b.<?php if(count($answers)>0) {echo $answers[1];}?> </label>
+                    <label for="q1-answers-b" class="labelb"><?php if(count($answers)>0) {echo $answers[$j++];}?> </label>
                 </div>
                 <div class="answer">
                     <input type="radio" name="q1-answers" id="q1-answers-c" value="C">
-                    <label for="q1-answers-c" class="labelc">c.<?php if(count($answers)>0) {echo $answers[2];}?> </label>
+                    <label for="q1-answers-c" class="labelc"><?php if(count($answers)>0) {echo $answers[$j++];}?> </label>
                 </div>
                 <div class="answer">
                     <input type="radio" name="q1-answers" id="q1-answers-d" value="D">
-                    <label for="q1-answers-d" class="labeld">d.<?php if(count($answers)>0) {echo $answers[3];}?> </label>
+                    <label for="q1-answers-d" class="labeld"><?php if(count($answers)>0) {echo $answers[$j++];}?> </label>
                 </div>
                 <div class="answer">
                     <input type="radio" name="q1-answers" id="q1-answers-e" value="E">
-                    <label for="q1-answers-e" class="labelf">e.<?php if(count($answers)>0) {echo $answers[4];}?> </label>
+                    <label for="q1-answers-e" class="labelf"><?php if(count($answers)>0) {echo $answers[$j++];}?> </label>
                 </div>
                 <div class="answer">
                     <input type="radio" name="q1-answers" id="q1-answers-f" value="F">
-                    <label for="q1-answers-f" class="labelf">f.<?php if(count($answers)>0) {echo $answers[5];}?> </label>
+                    <label for="q1-answers-f" class="labelf"><?php if(count($answers)>0) {echo $answers[$j++];}?> </label>
                 </div>
                 <hr class="question">
             </div>
@@ -64,33 +68,33 @@
                     <br><br>
                     <?php 
                         if(count($questions)>0)
-                        {echo $questions[1];} 
+                        {echo $questions[$i++];} 
                     ?>
                 </h3>
                 <hr class="question">
                 <div class="answer">
                     <input type="radio" name="q2-answers" id="q2-answers-a" value="A">
-                    <label for="q2-answers-a" class="labela">a.<?php if(count($answers)>0) {echo $answers[6];}?> </label>
+                    <label for="q2-answers-a" class="labela"><?php if(count($answers)>0) {echo $answers[$j++];}?> </label>
                 </div>
                 <div class="answer">
                     <input type="radio" name="q2-answers" id="q2-answers-b" value="B">
-                    <label for="q2-answers-b" class="labelb">b.<?php if(count($answers)>0) {echo $answers[7];}?> </label>
+                    <label for="q2-answers-b" class="labelb"><?php if(count($answers)>0) {echo $answers[$j++];}?> </label>
                 </div>
                 <div class="answer">
                     <input type="radio" name="q2-answers" id="q2-answers-c" value="C">
-                    <label for="q2-answers-c" class="labelc">c.<?php if(count($answers)>0) {echo $answers[8];}?> </label>
+                    <label for="q2-answers-c" class="labelc"><?php if(count($answers)>0) {echo $answers[$j++];}?> </label>
                 </div>
                 <div class="answer">
                     <input type="radio" name="q2-answers" id="q2-answers-d" value="D">
-                    <label for="q2-answers-d" class="labeld">d.<?php if(count($answers)>0) {echo $answers[9];}?> </label>
+                    <label for="q2-answers-d" class="labeld"><?php if(count($answers)>0) {echo $answers[$j++];}?> </label>
                 </div>
                 <div class="answer">
                     <input type="radio" name="q2-answers" id="q2-answers-e" value="E">
-                    <label for="q2-answers-e" class="labelf">e.<?php if(count($answers)>0) {echo $answers[10];}?> </label>
+                    <label for="q2-answers-e" class="labelf"><?php if(count($answers)>0) {echo $answers[$j++];}?> </label>
                 </div>
                 <div class="answer">
                     <input type="radio" name="q2-answers" id="q2-answers-f" value="F">
-                    <label for="q2-answers-f" class="labelf">f.<?php if(count($answers)>0) {echo $answers[11];}?> </label>
+                    <label for="q2-answers-f" class="labelf"><?php if(count($answers)>0) {echo $answers[$j++];}?> </label>
                 </div>
                 <hr class="question">
             </div>
@@ -99,33 +103,33 @@
                     <br><br>
                     <?php 
                         if(count($questions)>0)
-                        {echo $questions[2];}
+                        {echo $questions[$i++];}
                     ?>
                 </h3>
                 <hr class="question">
                 <div class="answer">
                     <input type="radio" name="q3-answers" id="q3-answers-a" value="A">
-                    <label for="q3-answers-a" class="labela">a.<?php if(count($answers)>0) {echo $answers[12];}?> </label>
+                    <label for="q3-answers-a" class="labela"><?php if(count($answers)>0) {echo $answers[$j++];}?> </label>
                 </div>
                 <div class="answer">
                     <input type="radio" name="q3-answers" id="q3-answers-b" value="B">
-                    <label for="q3-answers-b" class="labelb">b.<?php if(count($answers)>0) {echo $answers[13];}?> </label>
+                    <label for="q3-answers-b" class="labelb"><?php if(count($answers)>0) {echo $answers[$j++];}?> </label>
                 </div>
                 <div class="answer">
                     <input type="radio" name="q3-answers" id="q3-answers-c" value="C">
-                    <label for="q3-answers-c" class="labelc">c.<?php if(count($answers)>0) {echo $answers[14];}?> </label>
+                    <label for="q3-answers-c" class="labelc"><?php if(count($answers)>0) {echo $answers[$j++];}?> </label>
                 </div>
                 <div class="answer">
                     <input type="radio" name="q3-answers" id="q3-answers-d" value="D">
-                    <label for="q3-answers-d" class="labeld">d.<?php if(count($answers)>0) {echo $answers[15];}?> </label>
+                    <label for="q3-answers-d" class="labeld"><?php if(count($answers)>0) {echo $answers[$j++];}?> </label>
                 </div>
                 <div class="answer">
                     <input type="radio" name="q3-answers" id="q3-answers-e" value="E">
-                    <label for="q3-answers-e" class="labelf">e.<?php if(count($answers)>0) {echo $answers[16];}?> </label>
+                    <label for="q3-answers-e" class="labelf"><?php if(count($answers)>0) {echo $answers[$j++];}?> </label>
                 </div>
                 <div class="answer">
                     <input type="radio" name="q3-answers" id="q3-answers-f" value="F">
-                    <label for="q3-answers-f" class="labelf">f.<?php if(count($answers)>0) {echo $answers[17];}?> </label>
+                    <label for="q3-answers-f" class="labelf"><?php if(count($answers)>0) {echo $answers[$j++];}?> </label>
                 </div>
                 <hr class="question">
             </div>
@@ -134,33 +138,33 @@
                     <br><br>
                     <?php 
                         if(count($questions)>0)
-                        {echo $questions[3];}
+                        {echo $questions[$i++];}
                     ?>
                 </h3>
                 <hr class="question">
                 <div class="answer">
                     <input type="radio" name="q4-answers" id="q4-answers-a" value="A">
-                    <label for="q4-answers-a" class="labela">a.<?php if(count($answers)>0) {echo $answers[18];}?> </label>
+                    <label for="q4-answers-a" class="labela"><?php if(count($answers)>0) {echo $answers[$j++];}?> </label>
                 </div>
                 <div class="answer">
                     <input type="radio" name="q4-answers" id="q4-answers-b" value="B">
-                    <label for="q4-answers-b" class="labelb">b.<?php if(count($answers)>0) {echo $answers[19];}?> </label>
+                    <label for="q4-answers-b" class="labelb"><?php if(count($answers)>0) {echo $answers[$j++];}?> </label>
                 </div>
                 <div class="answer">
                     <input type="radio" name="q4-answers" id="q4-answers-c" value="C">
-                    <label for="q4-answers-c" class="labelc">c.<?php if(count($answers)>0) {echo $answers[20];}?> </label>
+                    <label for="q4-answers-c" class="labelc"><?php if(count($answers)>0) {echo $answers[$j++];}?> </label>
                 </div>
                 <div class="answer">
                     <input type="radio" name="q4-answers" id="q4-answers-d" value="D">
-                    <label for="q4-answers-d" class="labeld">d.<?php if(count($answers)>0) {echo $answers[21];}?> </label>
+                    <label for="q4-answers-d" class="labeld"><?php if(count($answers)>0) {echo $answers[$j++];}?> </label>
                 </div>
                 <div class="answer">
                     <input type="radio" name="q4-answers" id="q4-answers-e" value="E">
-                    <label for="q4-answers-e" class="labelf">e.<?php if(count($answers)>0) {echo $answers[22];}?> </label>
+                    <label for="q4-answers-e" class="labelf"><?php if(count($answers)>0) {echo $answers[$j++];}?> </label>
                 </div>
                 <div class="answer">
                     <input type="radio" name="q4-answers" id="q4-answers-f" value="F">
-                    <label for="q4-answers-f" class="labelf">f.<?php if(count($answers)>0) {echo $answers[23];}?> </label>
+                    <label for="q4-answers-f" class="labelf"><?php if(count($answers)>0) {echo $answers[$j++];}?> </label>
                 </div>
                 <hr class="question">
             </div>
@@ -169,33 +173,33 @@
                     <br><br>
                     <?php 
                         if(count($questions)>0)
-                        {echo $questions[4];}
+                        {echo $questions[$i++];}
                     ?>
                 </h3>
                 <hr class="question">
                 <div class="answer">
                     <input type="radio" name="q5-answers" id="q5-answers-a" value="A">
-                    <label for="q5-answers-a" class="labela">a.<?php if(count($answers)>0) {echo $answers[24];}?> </label>
+                    <label for="q5-answers-a" class="labela"><?php if(count($answers)>0) {echo $answers[$j++];}?> </label>
                 </div>
                 <div class="answer">
                     <input type="radio" name="q5-answers" id="q5-answers-b" value="B">
-                    <label for="q5-answers-b" class="labelb">b.<?php if(count($answers)>0) {echo $answers[25];}?> </label>
+                    <label for="q5-answers-b" class="labelb"><?php if(count($answers)>0) {echo $answers[$j++];}?> </label>
                 </div>
                 <div class="answer">
                     <input type="radio" name="q5-answers" id="q5-answers-c" value="C">
-                    <label for="q5-answers-c" class="labelc">c.<?php if(count($answers)>0) {echo $answers[26];}?> </label>
+                    <label for="q5-answers-c" class="labelc"><?php if(count($answers)>0) {echo $answers[$j++];}?> </label>
                 </div>
                 <div class="answer">
                     <input type="radio" name="q5-answers" id="q5-answers-d" value="D">
-                    <label for="q5-answers-d" class="labeld">d.<?php if(count($answers)>0) {echo $answers[27];}?> </label>
+                    <label for="q5-answers-d" class="labeld"><?php if(count($answers)>0) {echo $answers[$j++];}?> </label>
                 </div>
                 <div class="answer">
                     <input type="radio" name="q5-answers" id="q5-answers-e" value="E">
-                    <label for="q5-answers-e" class="labelf">e.<?php if(count($answers)>0) {echo $answers[28];}?> </label>
+                    <label for="q5-answers-e" class="labelf"><?php if(count($answers)>0) {echo $answers[$j++];}?> </label>
                 </div>
                 <div class="answer">
                     <input type="radio" name="q5-answers" id="q5-answers-f" value="F">
-                    <label for="q5-answers-f" class="labelf">f.<?php if(count($answers)>0) {echo $answers[29];}?> </label>
+                    <label for="q5-answers-f" class="labelf"><?php if(count($answers)>0) {echo $answers[$j++];}?> </label>
                 </div>
                 <hr class="question">
             </div>
@@ -204,33 +208,33 @@
                     <br><br>
                     <?php 
                         if(count($questions)>0)
-                        {echo $questions[5];} 
+                        {echo $questions[$i++];} 
                     ?>
                 </h3>
                 <hr class="question">
                 <div class="answer">
                     <input type="radio" name="q6-answers" id="q6-answers-a" value="A">
-                    <label for="q6-answers-a" class="labela">a.<?php if(count($answers)>0) {echo $answers[30];}?> </label>
+                    <label for="q6-answers-a" class="labela"><?php if(count($answers)>0) {echo $answers[$j++];}?> </label>
                 </div>
                 <div class="answer">
                     <input type="radio" name="q6-answers" id="q6-answers-b" value="B">
-                    <label for="q6-answers-b" class="labelb">b.<?php if(count($answers)>0) {echo $answers[31];}?> </label>
+                    <label for="q6-answers-b" class="labelb"><?php if(count($answers)>0) {echo $answers[$j++];}?> </label>
                 </div>
                 <div class="answer">
                     <input type="radio" name="q6-answers" id="q6-answers-c" value="C">
-                    <label for="q6-answers-c" class="labelc">c.<?php if(count($answers)>0) {echo $answers[32];}?> </label>
+                    <label for="q6-answers-c" class="labelc"><?php if(count($answers)>0) {echo $answers[$j++];}?> </label>
                 </div>
                 <div class="answer">
                     <input type="radio" name="q6-answers" id="q6-answers-d" value="D">
-                    <label for="q6-answers-d" class="labeld">d.<?php if(count($answers)>0) {echo $answers[33];}?> </label>
+                    <label for="q6-answers-d" class="labeld"><?php if(count($answers)>0) {echo $answers[$j++];}?> </label>
                 </div>
                 <div class="answer">
                     <input type="radio" name="q6-answers" id="q6-answers-e" value="E">
-                    <label for="q6-answers-e" class="labelf">e.<?php if(count($answers)>0) {echo $answers[34];}?> </label>
+                    <label for="q6-answers-e" class="labelf"><?php if(count($answers)>0) {echo $answers[$j++];}?> </label>
                 </div>
                 <div class="answer">
                     <input type="radio" name="q6-answers" id="q6-answers-f" value="F">
-                    <label for="q6-answers-f" class="labelf">f.<?php if(count($answers)>0) {echo $answers[35];}?> </label>
+                    <label for="q6-answers-f" class="labelf"><?php if(count($answers)>0) {echo $answers[$j++];}?> </label>
                 </div>
                 <hr class="question">
             </div>
@@ -239,33 +243,33 @@
                     <br><br>
                     <?php 
                         if(count($questions)>0)
-                        {echo $questions[6];}
+                        {echo $questions[$i++];}
                     ?>
                 </h3>
                 <hr class="question">
                 <div class="answer">
                     <input type="radio" name="q7-answers" id="q7-answers-a" value="A">
-                    <label for="q7-answers-a" class="labela">a.<?php if(count($answers)>0) {echo $answers[36];}?> </label>
+                    <label for="q7-answers-a" class="labela"><?php if(count($answers)>0) {echo $answers[$j++];}?> </label>
                 </div>
                 <div class="answer">
                     <input type="radio" name="q7-answers" id="q7-answers-b" value="B">
-                    <label for="q7-answers-b" class="labelb">b.<?php if(count($answers)>0) {echo $answers[37];}?> </label>
+                    <label for="q7-answers-b" class="labelb"><?php if(count($answers)>0) {echo $answers[$j++];}?> </label>
                 </div>
                 <div class="answer">
                     <input type="radio" name="q7-answers" id="q7-answers-c" value="C">
-                    <label for="q7-answers-c" class="labelc">c.<?php if(count($answers)>0) {echo $answers[38];}?> </label>
+                    <label for="q7-answers-c" class="labelc"><?php if(count($answers)>0) {echo $answers[$j++];}?> </label>
                 </div>
                 <div class="answer">
                     <input type="radio" name="q7-answers" id="q7-answers-d" value="D">
-                    <label for="q7-answers-d" class="labeld">d.<?php if(count($answers)>0) {echo $answers[39];}?> </label>
+                    <label for="q7-answers-d" class="labeld"><?php if(count($answers)>0) {echo $answers[$j++];}?> </label>
                 </div>
                 <div class="answer">
                     <input type="radio" name="q7-answers" id="q7-answers-e" value="E">
-                    <label for="q7-answers-e" class="labelf">e.<?php if(count($answers)>0) {echo $answers[40];}?> </label>
+                    <label for="q7-answers-e" class="labelf"><?php if(count($answers)>0) {echo $answers[$j++];}?> </label>
                 </div>
                 <div class="answer">
                     <input type="radio" name="q7-answers" id="q7-answers-f" value="F">
-                    <label for="q7-answers-f" class="labelf">f.<?php if(count($answers)>0) {echo $answers[41];}?> </label>
+                    <label for="q7-answers-f" class="labelf"><?php if(count($answers)>0) {echo $answers[$j++];}?> </label>
                 </div>
                 <hr class="question">
             </div>
@@ -274,33 +278,33 @@
                     <br><br>
                     <?php 
                         if(count($questions)>0)
-                        {echo $questions[7];}
+                        {echo $questions[$i++];}
                     ?>
                 </h3>
                 <hr class="question">
                 <div class="answer">
                     <input type="radio" name="q8-answers" id="q8-answers-a" value="A">
-                    <label for="q8-answers-a" class="labela">a.<?php if(count($answers)>0) {echo $answers[42];}?> </label>
+                    <label for="q8-answers-a" class="labela"><?php if(count($answers)>0) {echo $answers[$j++];}?> </label>
                 </div>
                 <div class="answer">
                     <input type="radio" name="q8-answers" id="q8-answers-b" value="B">
-                    <label for="q8-answers-b" class="labelb">b.<?php if(count($answers)>0) {echo $answers[43];}?> </label>
+                    <label for="q8-answers-b" class="labelb"><?php if(count($answers)>0) {echo $answers[$j++];}?> </label>
                 </div>
                 <div class="answer">
                     <input type="radio" name="q8-answers" id="q8-answers-c" value="C">
-                    <label for="q8-answers-c" class="labelc">c.<?php if(count($answers)>0) {echo $answers[44];}?> </label>
+                    <label for="q8-answers-c" class="labelc"><?php if(count($answers)>0) {echo $answers[$j++];}?> </label>
                 </div>
                 <div class="answer">
                     <input type="radio" name="q8-answers" id="q8-answers-d" value="D">
-                    <label for="q8-answers-d" class="labeld">d.<?php if(count($answers)>0) {echo $answers[45];}?> </label>
+                    <label for="q8-answers-d" class="labeld"><?php if(count($answers)>0) {echo $answers[$j++];}?> </label>
                 </div>
                 <div class="answer">
                     <input type="radio" name="q8-answers" id="q8-answers-e" value="E">
-                    <label for="q8-answers-e" class="labelf">e.<?php if(count($answers)>0) {echo $answers[46];}?> </label>
+                    <label for="q8-answers-e" class="labelf"><?php if(count($answers)>0) {echo $answers[$j++];}?> </label>
                 </div>
                 <div class="answer">
                     <input type="radio" name="q8-answers" id="q8-answers-f" value="F">
-                    <label for="q8-answers-f" class="labelf">f.<?php if(count($answers)>0) {echo $answers[47];}?> </label>
+                    <label for="q8-answers-f" class="labelf"><?php if(count($answers)>0) {echo $answers[$j++];}?> </label>
                 </div>
                 <hr class="question">
             </div>
@@ -309,33 +313,33 @@
                     <br><br>
                     <?php 
                         if(count($questions)>0)
-                        {echo $questions[8];}
+                        {echo $questions[$i++];}
                     ?>
                 </h3>
                 <hr class="question">
                 <div class="answer">
                     <input type="radio" name="q9-answers" id="q9-answers-a" value="A">
-                    <label for="q9-answers-a" class="labela">a.<?php if(count($answers)>0) {echo $answers[48];}?> </label>
+                    <label for="q9-answers-a" class="labela"><?php if(count($answers)>0) {echo $answers[$j++];}?> </label>
                 </div>
                 <div class="answer">
                     <input type="radio" name="q9-answers" id="q9-answers-b" value="B">
-                    <label for="q9-answers-b" class="labelb">b.<?php if(count($answers)>0) {echo $answers[49];}?> </label>
+                    <label for="q9-answers-b" class="labelb"><?php if(count($answers)>0) {echo $answers[$j++];}?> </label>
                 </div>
                 <div class="answer">
                     <input type="radio" name="q9-answers" id="q9-answers-c" value="C">
-                    <label for="q9-answers-c" class="labelc">c.<?php if(count($answers)>0) {echo $answers[50];}?> </label>
+                    <label for="q9-answers-c" class="labelc"><?php if(count($answers)>0) {echo $answers[$j++];}?> </label>
                 </div>
                 <div class="answer">
                     <input type="radio" name="q9-answers" id="q9-answers-d" value="D">
-                    <label for="q9-answers-d" class="labeld">d.<?php if(count($answers)>0) {echo $answers[51];}?> </label>
+                    <label for="q9-answers-d" class="labeld"><?php if(count($answers)>0) {echo $answers[$j++];}?> </label>
                 </div>
                 <div class="answer">
                     <input type="radio" name="q9-answers" id="q9-answers-e" value="E">
-                    <label for="q9-answers-e" class="labelf">e.<?php if(count($answers)>0) {echo $answers[52];}?> </label>
+                    <label for="q9-answers-e" class="labelf"><?php if(count($answers)>0) {echo $answers[$j++];}?> </label>
                 </div>
                 <div class="answer">
                     <input type="radio" name="q9-answers" id="q9-answers-f" value="F">
-                    <label for="q9-answers-f" class="labelf">f.<?php if(count($answers)>0) {echo $answers[53];}?> </label>
+                    <label for="q9-answers-f" class="labelf"><?php if(count($answers)>0) {echo $answers[$j++];}?> </label>
                 </div>
                 <hr class="question">
             </div>
@@ -344,33 +348,33 @@
                     <br><br>
                     <?php 
                         if(count($questions)>0)
-                        {echo $questions[9];}
+                        {echo $questions[$i++];}
                     ?>
                 </h3>
                 <hr class="question">
                 <div class="answer">
                     <input type="radio" name="q10-answers" id="q10-answers-a" value="A">
-                    <label for="q10-answers-a" class="labela">a.<?php if(count($answers)>0) {echo $answers[54];}?> </label>
+                    <label for="q10-answers-a" class="labela"><?php if(count($answers)>0) {echo $answers[$j++];}?> </label>
                 </div>
                 <div class="answer">
                     <input type="radio" name="q10-answers" id="q10-answers-b" value="B">
-                    <label for="q10-answers-b" class="labelb">b.<?php if(count($answers)>0) {echo $answers[55];}?> </label>
+                    <label for="q10-answers-b" class="labelb"><?php if(count($answers)>0) {echo $answers[$j++];}?> </label>
                 </div>
                 <div class="answer">
                     <input type="radio" name="q10-answers" id="q10-answers-c" value="C">
-                    <label for="q10-answers-c" class="labelc">c.<?php if(count($answers)>0) {echo $answers[56];}?> </label>
+                    <label for="q10-answers-c" class="labelc"><?php if(count($answers)>0) {echo $answers[$j++];}?> </label>
                 </div>
                 <div class="answer">
                     <input type="radio" name="q10-answers" id="q10-answers-d" value="D">
-                    <label for="q10-answers-d" class="labeld">d.<?php if(count($answers)>0) {echo $answers[57];}?> </label>
+                    <label for="q10-answers-d" class="labeld"><?php if(count($answers)>0) {echo $answers[$j++];}?> </label>
                 </div>
                 <div class="answer">
                     <input type="radio" name="q10-answers" id="q10-answers-e" value="E">
-                    <label for="q10-answers-e" class="labelf">e.<?php if(count($answers)>0) {echo $answers[58];}?> </label>
+                    <label for="q10-answers-e" class="labelf"><?php if(count($answers)>0) {echo $answers[$j++];}?> </label>
                 </div>
                 <div class="answer">
                     <input type="radio" name="q10-answers" id="q10-answers-f" value="F">
-                    <label for="q10-answers-f" class="labelf">f.<?php if(count($answers)>0) {echo $answers[59];}?> </label>
+                    <label for="q10-answers-f" class="labelf"><?php if(count($answers)>0) {echo $answers[$j++];}?> </label>
                 </div>
                 <hr class="question">
             </div>
@@ -379,33 +383,33 @@
                     <br><br>
                     <?php 
                         if(count($questions)>0)
-                        {echo $questions[10];}
+                        {echo $questions[$i++];}
                     ?>
                 </h3>
                 <hr class="question">
                 <div class="answer">
                     <input type="radio" name="q-answers" id="q11-answers-a" value="A">
-                    <label for="q11-answers-a" class="labela">a.<?php if(count($answers)>0) {echo $answers[60];}?> </label>
+                    <label for="q11-answers-a" class="labela"><?php if(count($answers)>0) {echo $answers[$j++];}?> </label>
                 </div>
                 <div class="answer">
                     <input type="radio" name="q11-answers" id="q11-answers-b" value="B">
-                    <label for="q11-answers-b" class="labelb">b.<?php if(count($answers)>0) {echo $answers[61];}?> </label>
+                    <label for="q11-answers-b" class="labelb"><?php if(count($answers)>0) {echo $answers[$j++];}?> </label>
                 </div>
                 <div class="answer">
                     <input type="radio" name="q11-answers" id="q11-answers-c" value="C">
-                    <label for="q11-answers-c" class="labelc">c.<?php if(count($answers)>0) {echo $answers[62];}?> </label>
+                    <label for="q11-answers-c" class="labelc"><?php if(count($answers)>0) {echo $answers[$j++];}?> </label>
                 </div>
                 <div class="answer">
                     <input type="radio" name="q11-answers" id="q11-answers-d" value="D">
-                    <label for="q11-answers-d" class="labeld">d.<?php if(count($answers)>0) {echo $answers[63];}?> </label>
+                    <label for="q11-answers-d" class="labeld"><?php if(count($answers)>0) {echo $answers[$j++];}?> </label>
                 </div>
                 <div class="answer">
                     <input type="radio" name="q11-answers" id="q11-answers-e" value="E">
-                    <label for="q11-answers-e" class="labelf">e.<?php if(count($answers)>0) {echo $answers[64];}?></label>
+                    <label for="q11-answers-e" class="labelf"><?php if(count($answers)>0) {echo $answers[$j++];}?></label>
                 </div>
                 <div class="answer">
                     <input type="radio" name="q11-answers" id="q11-answers-f" value="F">
-                    <label for="q11-answers-f" class="labelf">f. <?php if(count($answers)>0) {echo $answers[65];}?></label>
+                    <label for="q11-answers-f" class="labelf"> <?php if(count($answers)>0) {echo $answers[$j++];}?></label>
                 </div>
                 <hr class="question">
             </div>
@@ -414,33 +418,33 @@
                     <br><br>
                     <?php 
                         if(count($questions)>0)
-                        {echo $questions[11];}
+                        {echo $questions[$i++];}
                     ?>
                 </h3>
                 <hr class="question">
                 <div class="answer">
                     <input type="radio" name="q12-answers" id="q12-answers-a" value="A">
-                    <label for="q12-answers-a" class="labela">a.<?php if(count($answers)>0) {echo $answers[66];}?> </label>
+                    <label for="q12-answers-a" class="labela"><?php if(count($answers)>0) {echo $answers[$j++];}?> </label>
                 </div>
                 <div class="answer">
                     <input type="radio" name="q12-answers" id="q12-answers-b" value="B">
-                    <label for="q12-answers-b" class="labelb">b.<?php if(count($answers)>0) {echo $answers[67];}?> </label>
+                    <label for="q12-answers-b" class="labelb"><?php if(count($answers)>0) {echo $answers[$j++];}?> </label>
                 </div>
                 <div class="answer">
                     <input type="radio" name="q12-answers" id="q12-answers-c" value="C">
-                    <label for="q12-answers-c" class="labelc">c.<?php if(count($answers)>0) {echo $answers[68];}?> </label>
+                    <label for="q12-answers-c" class="labelc"><?php if(count($answers)>0) {echo $answers[$j++];}?> </label>
                 </div>
                 <div class="answer">
                     <input type="radio" name="q12-answers" id="q12-answers-d" value="D">
-                    <label for="q12-answers-d" class="labeld">d. <?php if(count($answers)>0) {echo $answers[69];}?></label>
+                    <label for="q12-answers-d" class="labeld"> <?php if(count($answers)>0) {echo $answers[$j++];}?></label>
                 </div>
                 <div class="answer">
                     <input type="radio" name="q12-answers" id="q12-answers-e" value="E">
-                    <label for="q12-answers-e" class="labelf">e.<?php if(count($answers)>0) {echo $answers[70];}?> </label>
+                    <label for="q12-answers-e" class="labelf"><?php if(count($answers)>0) {echo $answers[$j++];}?> </label>
                 </div>
                 <div class="answer">
                     <input type="radio" name="q12-answers" id="q12-answers-f" value="F">
-                    <label for="q12-answers-f" class="labelf">f.<?php if(count($answers)>0) {echo $answers[71];}?> </label>
+                    <label for="q12-answers-f" class="labelf"><?php if(count($answers)>0) {echo $answers[$j++];}?> </label>
                 </div>
                 <hr class="question">
                 <button id="quiz-btn" name="quiz" type="submit" class="btn">Submit</button>
