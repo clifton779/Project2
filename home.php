@@ -29,6 +29,13 @@
             logo(); 
             navBar(); 
         ?>
-        <h1>Welcome to Personality Check, <?= array_search($_SESSION['UserData']['Username'], $logins); ?> </h1>
+        <div id="home">
+            <h1>Welcome to Personality Check, <?= array_search($_SESSION['UserData']['Username'], $logins); ?> </h1>
+            <span>Please participate in one of our fun <a href="./quiz.php">personality quizzes!</a></span>
+            <br>
+            <span>Check previous results at <a href="./results.php">Results</a>!</span>
+            <br>
+            <span>You can also see others results at <a href="./community.php">Community</a></span>
+        </div>
     </body>
 </html>

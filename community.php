@@ -11,7 +11,7 @@
 
 <html>
     <head>
-        <title></title>
+        <title>Community Board</title>
         <meta charset="UTF-8">
         <link rel="stylesheet" href="./style.css">
     </head>
@@ -20,29 +20,40 @@
         logo();
         navBar();
         ?>
-        <table>
-        <?php
-            $file = json_decode(file_get_contents('./assets/past_results.json'), true);
-            $username = array_search($_SESSION['UserData']['Username'], $logins);
-            $leaderboard = file('leaderboard.txt');
-            $count = count($leaderboard);
-            for ($x = 0; $x < $count; $x++) {
-                if ($leaderboard[$x] === "Blank\n") {
-                    continue;
-                }
-                $info = $leaderboard[$x];
-                $info = explode(',', $info);
-                ?>
-                    <tr>
-                        <td><?= $info[0];?></td>
-                        <td><?= $info[2];?></td>
-                        <td><img class="result" src=<?= $info[3];?>/></td>
-                        <td><?= $info[4];?></td>
-                        <td><?= $info[5];?></td>
-                    </tr>
+        <div class="results-container">
+            <h2>Community Board</h2>
+            <table class="quiz-data">
+                <tr>
+                    <th>Username</th>
+                    <th>Quiz Date</th>
+                    <th>Quiz</th>
+                    <th>Result</th>
+                </tr>
+            <?php
+                $file = json_decode(file_get_contents('./assets/past_results.json'), true);
+                $username = array_search($_SESSION['UserData']['Username'], $logins);
+                $leaderboard = file('./assets/leaderboard.txt');
+                $count = count($leaderboard)-1;
+                for ($x = $count; $x > -1; $x--) {
+                    if(($count - $x) == 10) {
+                        break;
+                    }
+                    if ($leaderboard[$x] === "Blank\n") {
+                        continue;
+                    }
+                    $info = $leaderboard[$x];
+                    $info = explode(',', $info);
+            ?>
+                <tr>
+                    <td><?= $info[0];?></td>
+                    <td><?= $info[2];?></td>
+                    <td><?= $info[1];?></td>
+                    <td><?= $info[4];?></td>
+                </tr>
                 <?php
-            }
-        ?>
-        </table>
+                }
+                ?>
+            </table>
+        </div>
     </body>
 </html>
