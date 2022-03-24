@@ -116,12 +116,12 @@
             }
             $file[$user][] = $arr;
             file_put_contents('./assets/past_results.json', json_encode($file));
-            $leaderboard = file('leaderboard.txt');
+            $leaderboard = file('./assets/leaderboard.txt');
             $newLeaderboard = array_slice($leaderboard, 1);
             $insert = implode(",", $arr);
             $insert = $user . "," . $insert . "\n";
             $newLeaderboard[] = $insert;
-            file_put_contents('leaderboard.txt', $newLeaderboard);
+            file_put_contents('./assets/leaderboard.txt', $newLeaderboard);
 
             return true;
         }
