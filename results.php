@@ -23,18 +23,26 @@ if(!isset($_SESSION['UserData']['Username'])){
             <?php
             $file = json_decode(file_get_contents('./assets/past_results.json'), true);
             $username = array_search($_SESSION['UserData']['Username'], $logins);
-            $userarray = $file[$username];
-            $userCount = count($userarray);
-            for ($x = 0; $x < $userCount; $x++) {
+            if (array_key_exists($username, $file)) {
+                $userarray = $file[$username];
+                $userCount = count($userarray);
+                for ($x = 0; $x < $userCount; $x++) {
+                    ?>
+                    <tr>
+                        <td><?= $username;?></td>
+                        <td><?= $userarray[$x][1];?></td>
+                        <td><img id="result" src=<?= $userarray[$x][2];?>/></td>
+                        <td><?= $userarray[$x][3];?></td>
+                        <td><?= $userarray[$x][4];?></td>
+                    </tr>
+                    <?php
+                }
+            } else {
                 ?>
                 <tr>
-                    <td><?= $username;?></td>
-                    <td><?= $userarray[$x][1];?></td>
-                    <td><img src=<?= $userarray[$x][2];?>/></td>
-                    <td><?= $userarray[$x][3];?></td>
-                    <td><?= $userarray[$x][4];?></td>
+                    <td>There's Nothing Here! Do a quiz!</td>
                 </tr>
-                <?php
+            <?php
             }
         ?>
         </table>

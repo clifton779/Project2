@@ -36,7 +36,7 @@
                     <tr>
                         <td><?= $info[0];?></td>
                         <td><?= $info[2];?></td>
-                        <td><img src=<?= $info[3]?>/></td>
+                        <td><img id="result" src=<?= $info[3]?>/></td>
                         <td><?= $info[4];?></td>
                         <td><?= $info[5];?></td>
                     </tr>
