@@ -114,8 +114,15 @@
             if (!array_key_exists($user, $file)) {
                 $file[$user] = array();
             }
-            $file[$user] = $arr;
+            $file[$user][] = $arr;
             file_put_contents('./assets/past_results.json', json_encode($file));
+            $leaderboard = file('leaderboard.txt');
+            $newLeaderboard = array_slice($leaderboard, 1);
+            $insert = implode(",", $arr);
+            $insert = $user . "," . $insert . "\n";
+            $newLeaderboard[] = $insert;
+            file_put_contents('leaderboard.txt', $newLeaderboard);
+
             return true;
         }
         return false;
