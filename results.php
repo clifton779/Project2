@@ -31,7 +31,7 @@ if(!isset($_SESSION['UserData']['Username'])){
                     <tr>
                         <td><?= $username;?></td>
                         <td><?= $userarray[$x][1];?></td>
-                        <td><img id="result" src=<?= $userarray[$x][2];?>/></td>
+                        <td><img class="result" src=<?= $userarray[$x][2];?>/></td>
                         <td><?= $userarray[$x][3];?></td>
                         <td><?= $userarray[$x][4];?></td>
                     </tr>
