@@ -132,7 +132,7 @@ div#results-inner-container {
   text-align: left;
 }
 
-div#results-container img#result, td img#result{
+div#results-container img#result, td img{
   height: 350px;
   width: 350px;
 }
