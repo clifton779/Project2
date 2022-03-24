@@ -76,7 +76,7 @@
             <br>
             <div id="results-inner-container">
                 <div>
-                    <img id="result" <?php if($pic != false) echo 'src='.$pic.''; ?> alt="result-pic">
+                    <img class="result" <?php if($pic != false) echo 'src='.$pic.''; ?> alt="result-pic">
                 </div>
                 <div id="description">
                     <h2><?php if($name != false) echo $name;?></h2>
