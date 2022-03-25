@@ -19,32 +19,45 @@ if(!isset($_SESSION['UserData']['Username'])){
         logo();
         navBar();
         ?>
-        <table>
-            <?php
-            $file = json_decode(file_get_contents('./assets/past_results.json'), true);
-            $username = array_search($_SESSION['UserData']['Username'], $logins);
-            if (array_key_exists($username, $file)) {
-                $userarray = $file[$username];
-                $userCount = count($userarray);
-                for ($x = 0; $x < $userCount; $x++) {
+        <div class="results-container">
+            <h2>Past Results</h2>
+            <table class="quiz-data">
+                <tr>
+                    <th>Username</th>
+                    <th>Quiz Date</th>
+                    <th>Quiz</th>
+                    <th>Result</th>
+                </tr>
+                <?php
+                $file = json_decode(file_get_contents('./assets/past_results.json'), true);
+                $username = array_search($_SESSION['UserData']['Username'], $logins);
+                if (array_key_exists($username, $file)) {
+                    $userarray = $file[$username];
+                    $userCount = count($userarray);
+                    for ($x = 0; $x < $userCount; $x++) {
+                        if(count($userarray[$x]) > 0){
+                        ?>
+                        <tr>
+                            <td><?= $username;?></td>
+                            <td><?= $userarray[$x][1];?></td>
+                            <td><?= $userarray[$x][0];?></td>
+                            <td><?= $userarray[$x][3];?></td>
+                        </tr>
+                        <?php
+                        }
+                    }
+                } else {
                     ?>
                     <tr>
-                        <td><?= $username;?></td>
-                        <td><?= $userarray[$x][1];?></td>
-                        <td><img class="result" src=<?= $userarray[$x][2];?>/></td>
-                        <td><?= $userarray[$x][3];?></td>
-                        <td><?= $userarray[$x][4];?></td>
+                        <td>There's</td>
+                        <td>Nothing Here!</td>
+                        <td>Do a</td>
+                        <td>quiz!</td>
                     </tr>
-                    <?php
+                <?php
                 }
-            } else {
-                ?>
-                <tr>
-                    <td>There's Nothing Here! Do a quiz!</td>
-                </tr>
-            <?php
-            }
-        ?>
-        </table>
+            ?>
+            </table>
+        </div>
     </body>
 </html>

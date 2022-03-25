@@ -104,7 +104,7 @@
     }
 
     function save_result($user, $quiz, $date, $pic, $name, $descriptions) {
-        $arr = [$quiz,$date,$pic,$name,$descriptions];
+        $arr = [$quiz, $date, $pic, $name, $descriptions];
         foreach($arr as $value){
             $key = array_search($value, $arr);
             $arr[$key] = str_replace("\r", "", $value);
@@ -112,19 +112,18 @@
         if(file_exists('./assets/past_results.json')){
             $file = json_decode(file_get_contents('./assets/past_results.json'), true);
             if (!array_key_exists($user, $file)) {
-                $file[$user] = array();
+                $file[$user][] = array();
             }
             $file[$user][] = $arr;
             file_put_contents('./assets/past_results.json', json_encode($file));
-            $leaderboard = file('leaderboard.txt');
-            $newLeaderboard = array_slice($leaderboard, 1);
+            $leaderboard = fopen('./assets/leaderboard.txt', 'a');
             $insert = implode(",", $arr);
             $insert = $user . "," . $insert . "\n";
-            $newLeaderboard[] = $insert;
-            file_put_contents('leaderboard.txt', $newLeaderboard);
-
+            fwrite($leaderboard, $insert);
+            fclose($leaderboard);
             return true;
         }
         return false;
     }
+
 ?>
